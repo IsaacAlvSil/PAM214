@@ -1,9 +1,16 @@
-const persona = {
-  nombre: "Isaac silva",
-  edad: 20,
-  ciudad: "Qro"
+const productos = [
+  {nombre: "laptop", precio: 12000},
+  {nombre: "Mouse", precio: 250},
+  {nombre: "Teclado", precio: 750},
+  {nombre: "Monitor", precio: 3000}
+];
+
+let obtenerNombre = function(lista, PrecioMin){
+  return lista
+  .filter(producto => producto.precio > PrecioMin)
+  .map(producto =>producto.nombre);
 };
 
-const { nombre, edad, ciudad } = persona;
+let nombres = obtenerNombre(productos, 1000);
+console.log(nombres);
 
-console.log(`Me llamo ${nombre}, tengo ${edad} años y vivo en ${ciudad}.`);

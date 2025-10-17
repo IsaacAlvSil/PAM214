@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     fontSize:40,
     fontFamily:'Courier',
     fontWeight:'900',
-    textDecorationLine:'underine',
+    textDecorationLine:'underline',
   },
   
   contenedorBotones:{

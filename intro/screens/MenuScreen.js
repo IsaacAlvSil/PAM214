@@ -2,7 +2,7 @@ import { Text, StyleSheet, View, Button,} from 'react-native'
 import React, { useState } from 'react'
 import ContadorScreen from './ContadorScreen'
 import BotonesScreen from './BotonesScreen'
-import TextInput from './TextInput'
+import PracticaInput from './PracticaInput'
 import ImageBackground from './ImageBackground'
 import ScrollView from './ScrollView'
 import ActivityIndicator from './ActivityIndicator'
@@ -22,8 +22,8 @@ export default function MenuScreen ()  {
         case 'botones':
             return <BotonesScreen/>
 
-        case 'TextInput':
-            return <TextInput/>
+        case 'PracticaInput':
+            return <PracticaInput/>
 
         case 'ImageBackground':
             return <ImageBackground/>
@@ -50,7 +50,7 @@ export default function MenuScreen ()  {
         <Text>MenuPracticas</Text>
         <Button onPress={()=>setScreen('contador')} title='Practica:Contador'/>
         <Button onPress={()=>setScreen('botones')} title='Practica:Buttons'/>
-        <Button onPress={()=>setScreen('Textimput')} title='Practica: Text Imput'/>
+        <Button onPress={()=>setScreen('PracticaInput')} title='Practica: Text imput'/>
         <Button onPress={()=>setScreen('ImageBackground')} title='Practica: ImageBackground'/>
         <Button onPress={()=>setScreen('ScrollView')} title='Practica:Scroll View'/>
         <Button onPress={()=>setScreen('ActivityIndicator')} title='Practica:Activity indicator'/>

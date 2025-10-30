@@ -11,7 +11,7 @@ export default function Repaso() {
     const timer = setTimeout(() => {
       setShowSplash(false);
     }, 2000);
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer) ;
   }, []);
 
   if (showSplash) {

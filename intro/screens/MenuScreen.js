@@ -3,12 +3,14 @@ import React, { useState } from 'react'
 import ContadorScreen from './ContadorScreen'
 import BotonesScreen from './BotonesScreen'
 import PracticaInput from './PracticaInput'
-import ImageBackground from './ImageBackground'
+import ImageBackgroundS from './ImageBackgroundS'
 import ScrollView from './ScrollView'
 import ActivityIndicator from './ActivityIndicator'
 import FlatList from './FlatList'
 import Modal from './Modal'
 import BottomSheet from './BottomSheet'
+import Repaso from './Repaso'
+
 //import { ActivityIndicator, FlatList, ImageBackground, Modal, ScrollView, TextInput } from 'react-native-web';
 
 export default function MenuScreen ()  {
@@ -25,8 +27,8 @@ export default function MenuScreen ()  {
         case 'PracticaInput':
             return <PracticaInput/>
 
-        case 'ImageBackground':
-            return <ImageBackground/>
+        case 'ImageBackgroundS':
+            return <ImageBackgroundS/>
 
         case 'ScrollView':
             return <ScrollView/>
@@ -43,21 +45,39 @@ export default function MenuScreen ()  {
         case 'BottomSheet':
             return <BottomSheet/>
 
+        case 'Repaso':
+            return <Repaso/>    
+
         case 'menu':
             default:
                 return (
-      <View>
-        <Text>MenuPracticas</Text>
+      <View style={styles.container}>
+        <Text style={styles.text}>MenuPracticas</Text>
         <Button onPress={()=>setScreen('contador')} title='Practica:Contador'/>
         <Button onPress={()=>setScreen('botones')} title='Practica:Buttons'/>
         <Button onPress={()=>setScreen('PracticaInput')} title='Practica: Text imput'/>
-        <Button onPress={()=>setScreen('ImageBackground')} title='Practica: ImageBackground'/>
+        <Button onPress={()=>setScreen('ImageBackgroundS')} title='Practica: ImageBackground'/>
         <Button onPress={()=>setScreen('ScrollView')} title='Practica:Scroll View'/>
         <Button onPress={()=>setScreen('ActivityIndicator')} title='Practica:Activity indicator'/>
         <Button onPress={()=>setScreen('FlatList')} title='Practica:Flat List'/>
         <Button onPress={()=>setScreen('Modal')} title='Practica:Modal'/>
         <Button onPress={()=>setScreen('BottomSheet')} title='Practica:Bottom Sheet'/>
+        <Button onPress={()=>setScreen('Repaso')} title='Repaso'/>
       </View>
     )             
     }
 }
+
+const styles = StyleSheet.create({
+  container: {
+
+    flex: 1,
+    backgroundColor: '#212121ff',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  text:{
+    backgroundColor: 'white',
+  },
+});

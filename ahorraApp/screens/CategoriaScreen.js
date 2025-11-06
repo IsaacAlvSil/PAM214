@@ -15,7 +15,6 @@ export default function CategoriaScreen({ goBack }) {
           <Text style={styles.cardSubtitle}>Gastos del mes: $3,200</Text>
         </View>
 
-        {/* 📊 Imagen local en lugar del icono y texto */}
         <View style={styles.graficaPlaceholder}>
           <Image
             source={require('../assets/g2.jpeg')}

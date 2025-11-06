@@ -7,10 +7,12 @@ export default function InicioSesionScreen() {
   const [contrasena, setContrasena] = useState('');
 
   const handleAcceder = () => {
-    if (!correo || !contrasena) {
-      Alert.alert('Error', 'Por favor llena todos los campos');
+    if ( correo.trim() === '' || contrasena.trim() === '') {
+      alert('Error Por favor llena todos los campos');
+      Alert.alert('Error, Por favor llena todos los campos');
     } else {
-      Alert.alert('Bienvenido', `Has iniciado sesión como: ${correo}`);
+      Alert.alert(` Bienvenido, Has iniciado sesión como: ${correo}, y con contraseña: ${contrasena}`);
+      alert(` Bienvenido, Has iniciado sesión como: ${correo}, y con contraseña: ${contrasena}`);
     }
   };
 
@@ -52,7 +54,12 @@ export default function InicioSesionScreen() {
             <Text style={styles.linkText}>¿Olvidaste la contraseña?</Text>
           </TouchableOpacity>
           
-          <TouchableOpacity style={styles.button} onPress={handleAcceder}>
+          <TouchableOpacity 
+          style={styles.button}
+           onPress={handleAcceder}
+           activeOpacity={0.2}
+           >
+            
             <Text style={styles.buttonText}>ACCEDER</Text>
           </TouchableOpacity>
           

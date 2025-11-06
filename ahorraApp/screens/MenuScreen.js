@@ -6,6 +6,9 @@ import DetallesTransaccionScreen from './DetallesTransaccionScreen';
 import GraficasScreen from './GraficasScreen';
 import FiltradoScreen from './FiltradoScreen';
 import CategoriaScreen from './CategoriaScreen';
+import InicioSesionScreen from './InicioSesionScreen';
+import ListaPresupuestos from './ListaPresupuestos';
+
 
 
 export default function MenuScreen() {
@@ -30,6 +33,12 @@ export default function MenuScreen() {
     case 'categoria':
       return <CategoriaScreen />;
 
+     case 'inicio sesion':
+      return <InicioSesionScreen />;
+
+    case 'lista presupuestos':
+      return <ListaPresupuestos />;
+
     default:
       return (
         <View style={styles.container}>
@@ -43,12 +52,14 @@ export default function MenuScreen() {
           </View>
 
           <Text style={styles.text}>Screens</Text>
+          <Button onPress={() => setScreen('inicio sesion')} title="inicio sesion"/>
           <Button onPress={() => setScreen('transacciones')} title="Transacciones" />
           <Button onPress={() => setScreen('nuevaTransaccion')} title="Nueva Transacción" />
           <Button onPress={() => setScreen('detalles')} title="Detalles de Transacción" />
           <Button onPress={() => setScreen('graficas')} title="graficas"/>
           <Button onPress={() => setScreen('filtrado')} title="filtrado"/>
           <Button onPress={() => setScreen('categoria')} title="categoria"/>
+          <Button onPress={() => setScreen('lista presupuestos')} title="lista presupuestos"/>
         </View>
       );
   }

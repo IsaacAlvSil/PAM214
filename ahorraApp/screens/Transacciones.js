@@ -1,8 +1,7 @@
 import React from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, ImageBackground } from "react-native";
 
 export default function TransaccionesScreen() {
-  // Datos simulados de transacciones (no funcionales)
   const transacciones = [
     { id: "1", tipo: "Depósito", monto: "+$1,200.00", fecha: "01/11/2025" },
     { id: "2", tipo: "Retiro", monto: "-$350.00", fecha: "02/11/2025" },
@@ -20,7 +19,7 @@ export default function TransaccionesScreen() {
       <Text
         style={[
           styles.monto,
-          { color: item.monto.includes("-") ? "#ff5e5e" : "#4caf50" },
+          { color: item.monto.includes("-") ? "#ff8a8a" : "#90ee90" },
         ]}
       >
         {item.monto}
@@ -29,58 +28,70 @@ export default function TransaccionesScreen() {
   );
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Historial de Transacciones</Text>
-      <FlatList
-        data={transacciones}
-        keyExtractor={(item) => item.id}
-        renderItem={renderItem}
-        style={styles.lista}
-      />
-    </View>
+    <ImageBackground
+      source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYif2M6fKDGvl-Mmjd5jgZ7Bnm46zWAOZJHg&s' }}
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <Text style={styles.titulo}>Historial de Transacciones</Text>
+        <View style={styles.listaContainer}>
+          <FlatList
+            data={transacciones}
+            keyExtractor={(item) => item.id}
+            renderItem={renderItem}
+            style={styles.lista}
+          />
+        </View>
+      </View>
+    </ImageBackground>
   );
 }
 
-// 🎨 Estilos
 const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+    resizeMode: "cover",
+    justifyContent: "center",
+  },
   container: {
     flex: 1,
-    backgroundColor: "#15297c",
-    paddingTop: 50,
+    justifyContent: "center",
+    alignItems: "center",
     paddingHorizontal: 20,
+    paddingTop: 60,
   },
   titulo: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: "bold",
     color: "#fff",
-    marginBottom: 20,
+    marginBottom: 25,
     textAlign: "center",
   },
+  listaContainer: {
+    width: "90%",
+    backgroundColor: "rgba(255,255,255,0.2)",
+    borderRadius: 25,
+    padding: 15,
+  },
   lista: {
-    backgroundColor: "#ffffff20",
-    borderRadius: 15,
-    padding: 10,
+    width: "100%",
   },
   item: {
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#ffffff",
+    backgroundColor: "rgba(255,255,255,0.25)",
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 20,
     marginBottom: 10,
-    shadowColor: "#000",
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-    elevation: 3,
   },
   tipo: {
     fontSize: 16,
     fontWeight: "600",
-    color: "#15297c",
+    color: "#fff",
   },
   fecha: {
     fontSize: 12,
-    color: "#444",
+    color: "#e0e0e0",
   },
   monto: {
     fontSize: 16,

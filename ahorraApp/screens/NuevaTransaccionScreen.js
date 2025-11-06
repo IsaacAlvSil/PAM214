@@ -1,70 +1,91 @@
 import React from "react";
-import { View, Text, TextInput, Button, StyleSheet } from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, ImageBackground } from "react-native";
 
 export default function NuevaTransaccionScreen() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.titulo}>Nueva Transacción</Text>
+    <ImageBackground
+      source={{ uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYif2M6fKDGvl-Mmjd5jgZ7Bnm46zWAOZJHg&s' }}
+      style={styles.background}
+    >
+      <View style={styles.container}>
+        <Text style={styles.titulo}>Nueva Transacción</Text>
 
-      <Text style={styles.label}>Nombre del destinatario</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Ejemplo: Juan Pérez"
-        placeholderTextColor="#ccc"
-      />
+        <Text style={styles.label}>Nombre del destinatario</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="Ejemplo: Juan Pérez"
+          placeholderTextColor="#ccc"
+        />
 
-      <Text style={styles.label}>Monto a enviar</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="$0.00"
-        keyboardType="numeric"
-        placeholderTextColor="#ccc"
-      />
+        <Text style={styles.label}>Monto a enviar</Text>
+        <TextInput
+          style={styles.input}
+          placeholder="$0.00"
+          keyboardType="numeric"
+          placeholderTextColor="#ccc"
+        />
 
-      <Text style={styles.label}>Descripción (opcional)</Text>
-      <TextInput
-        style={[styles.input, { height: 80 }]}
-        placeholder="Motivo o nota..."
-        placeholderTextColor="#ccc"
-        multiline
-      />
+        <Text style={styles.label}>Descripción (opcional)</Text>
+        <TextInput
+          style={[styles.input, { height: 80 }]}
+          placeholder="Motivo o nota..."
+          placeholderTextColor="#ccc"
+          multiline
+        />
 
-      <View style={styles.botonContainer}>
-        <Button title="Enviar Transacción" color="#0d1f5b" onPress={() => {}} />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Enviar Transacción</Text>
+        </TouchableOpacity>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: "#15297c",
-    padding: 20,
+    resizeMode: "cover",
     justifyContent: "center",
   },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 20,
+  },
   titulo: {
-    fontSize: 22,
+    fontSize: 26,
     fontWeight: "bold",
     color: "#fff",
-    marginBottom: 20,
+    marginBottom: 30,
     textAlign: "center",
   },
   label: {
     color: "#fff",
     fontSize: 16,
+    alignSelf: "flex-start",
+    marginLeft: "5%",
     marginBottom: 5,
   },
   input: {
-    backgroundColor: "#ffffff20",
-    borderRadius: 10,
-    padding: 10,
+    width: "90%",
+    backgroundColor: "rgba(255,255,255,0.2)",
+    padding: 15,
+    borderRadius: 25,
     color: "#fff",
     marginBottom: 15,
   },
-  botonContainer: {
-    marginTop: 10,
-    borderRadius: 10,
-    overflow: "hidden",
+  button: {
+    backgroundColor: "#4c7c3f",
+    paddingVertical: 15,
+    width: "90%",
+    borderRadius: 25,
+    alignItems: "center",
+    marginTop: 20,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
   },
 });

@@ -27,7 +27,7 @@ export default function InicioSesionScreen() {
         style={styles.background}
       >
         <View style={styles.container}>
-          {/* Logo - también con ruta relativa */}
+        
           <Image
            source={logo}
            style={styles.logo}
@@ -73,7 +73,7 @@ export default function InicioSesionScreen() {
   );
 }
 
-// Tus estilos permanecen igual...
+
 const styles = StyleSheet.create({
   background: {
     flex: 1,

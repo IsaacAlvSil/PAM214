@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Text, StyleSheet, View, SafeAreaView, ImageBackground, TextInput, Button,Alert} from 'react-native';
-import react, {component, useState} from 'react';
-
 export default function App () {
   const [showSplash, setShowSplash] = useState(true);
 

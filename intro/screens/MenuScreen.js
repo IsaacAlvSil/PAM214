@@ -6,7 +6,7 @@ import PracticaInput from './PracticaInput'
 import ImageBackgroundS from './ImageBackgroundS'
 import ScrollView from './ScrollView'
 import ActivityIndicator from './ActivityIndicator'
-import FlatList from './FlatList'
+import FlatListScreen from './FlatListScreen'
 import Modal from './Modal'
 import BottomSheet from './BottomSheet'
 import Repaso from './Repaso'
@@ -36,8 +36,8 @@ export default function MenuScreen ()  {
         case 'ActivityIndicator':
             return <ActivityIndicator/>
 
-        case 'Flatlist':
-            return <FlatList/>
+        case 'FlatListScreen':
+            return <FlatListScreen/>
 
         case 'Modal':
             return <Modal/>
@@ -59,7 +59,7 @@ export default function MenuScreen ()  {
         <Button onPress={()=>setScreen('ImageBackgroundS')} title='Practica: ImageBackground'/>
         <Button onPress={()=>setScreen('ScrollView')} title='Practica:Scroll View'/>
         <Button onPress={()=>setScreen('ActivityIndicator')} title='Practica:Activity indicator'/>
-        <Button onPress={()=>setScreen('FlatList')} title='Practica:Flat List'/>
+        <Button onPress={()=>setScreen('FlatListScreen')} title='Practica:Flat List'/>
         <Button onPress={()=>setScreen('Modal')} title='Practica:Modal'/>
         <Button onPress={()=>setScreen('BottomSheet')} title='Practica:Bottom Sheet'/>
         <Button onPress={()=>setScreen('Repaso')} title='Repaso'/>
